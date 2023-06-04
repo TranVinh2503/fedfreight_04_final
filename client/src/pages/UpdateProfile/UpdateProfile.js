@@ -63,7 +63,7 @@ function UpdateProfile() {
     const handleSubmit = async (event) => {
         event.preventDefault();
 
-        // if (user?.userName && fullName && phone?.toString() && birthday) {
+        if (user?.userName && fullName && phone?.toString() && birthday) {
         const formData = new FormData();
         formData.append('avatar', selectedFile);
         formData.append('userName', user?.userName);
@@ -117,9 +117,9 @@ function UpdateProfile() {
             setUpdateSuccessMessage('');
             setUpdateErrorMessage('Cập nhật thông tin không thành công');
         }
-        // } else {
-        //     alert('Vui lòng nhập đầu đủ thông tin');
-        // }
+        } else {
+            alert('Vui lòng nhập đầu đủ thông tin');
+        }
     };
     const handleFullNameChange = (firstName, lastName) => {
         const fullNameTmp = `${lastName} ${firstName}`;

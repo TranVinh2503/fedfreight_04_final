@@ -11,11 +11,11 @@ const cx = classNames.bind(styles);
 function OrderDetail() {
     const { order } = useContext(OrderContext);
     const [orderDetail, setOrderDetail] = useState([]);
+    
     useEffect(() => {
         const getOrderDetail = async () => {
             try {
                 const res = await axios.get('http://localhost:8000/getOrderDetail/' + order);
-                console.log(res.data);
                 setOrderDetail(res.data);
             } catch (err) {
                 console.log(err);
@@ -23,7 +23,7 @@ function OrderDetail() {
         };
         getOrderDetail();
     }, [order]);
-    console.log(order);
+    console.log(orderDetail[0]);
 
     return (
         <div className={cx('wrapper')}>
@@ -70,7 +70,7 @@ function OrderDetail() {
                                     <textarea value={orderDetail[0]?.note} readOnly></textarea>
                                 </div>
                                 {orderDetail.length > 0 &&
-                                    JSON.parse(orderDetail[0]?.product).map((value, index) => {
+                                    JSON.parse(orderDetail[0]?.product)?.map((value, index) => {
                                         return (
                                             <div className={cx('order-info')} key={index}>
                                                 <table>
@@ -91,7 +91,6 @@ function OrderDetail() {
                                                         </td>
                                                     </tr>
                                                 </table>
-                                                {/* <Button contact>Xác nhận</Button> */}
                                             </div>
                                         );
                                     })}

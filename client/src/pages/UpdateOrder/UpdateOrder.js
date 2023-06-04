@@ -51,32 +51,47 @@ function UpdateOrder() {
     const handleAddRow = () => {
         setRows([...rows, { name: '', quantity: '' }]);
     };
-    const handleSave = async () => {
-        const details = rows.map((row) => ({
-            name: row.name,
-            quantity: row.quantity,
-        }));
-        setProductDetail(details);
+    // ...
 
-        const productInfo = {
-            senderNameVN: senderNameVN,
-            senderNameHQ: senderNameHQ,
-            phoneVN: phoneVN,
-            phoneHQ: phoneHQ,
-            senderAddress: senderAddress,
-            receiverAddress: receiverAddress,
-            shipBranch: shipBranch,
-            note: note,
-            productDetail: details,
-            orderId: product[0]?.id,
-        };
-        try {
-            const res = await axios.post('http://localhost:8000/saveProductInfo', productInfo);
-            alert("Cập nhật thành công")
-        } catch (err) {
-            console.log(err);
-        }
+const handleSave = async () => {
+    // Check if all required fields are filled
+    if (
+        !senderNameVN ||
+        !phoneVN ||
+        !senderAddress ||
+        !receiverAddress || 
+        !senderNameHQ ||
+        !phoneHQ ||
+        !rows ||
+        product.length === 0
+    ) {
+        alert('Hãy điền hết tất cả các thông tin.');
+        return;
+    }
+    
+
+    const productInfo = {
+        senderNameVN: senderNameVN,
+        senderNameHQ: senderNameHQ,
+        phoneVN: phoneVN,
+        phoneHQ: phoneHQ,
+        senderAddress: senderAddress,
+        receiverAddress: receiverAddress,
+        shipBranch: shipBranch,
+        note: note,
+        productDetail: rows,
+        orderId: product?.[0]?.id,
     };
+    try {
+        const res = await axios.post('http://localhost:8000/saveProductInfo', productInfo);
+        console.log(res.data);
+        alert('Cập nhật thành công');
+    } catch (err) {
+        console.log(err);
+    }
+};
+
+
 
     return (
         <div className={cx('wrapper')}>

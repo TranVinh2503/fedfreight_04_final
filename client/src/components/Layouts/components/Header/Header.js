@@ -63,15 +63,6 @@ function Header() {
                             </li>
                             {userName ? (
                                 <>
-                                    {/* <li>
-                                        <Tippy content="Notifications">
-                                            <img
-                                                src={color ? icons.bell : icons.whiteBell}
-                                                alt="Notification"
-                                                className={cx('icon')}
-                                            ></img>
-                                        </Tippy>
-                                    </li> */}
                                     <li>
                                         <Tippy
                                             placement="bottom"
@@ -83,10 +74,7 @@ function Header() {
                                                         Xem Hồ sơ
                                                     </Button>
                                                     <Button option to="/orderList">
-                                                        Xem Lịch sử
-                                                    </Button>
-                                                    <Button option to="/">
-                                                        Xem Hành trình
+                                                        Xem Lịch Sử 
                                                     </Button>
 
                                                     <Button

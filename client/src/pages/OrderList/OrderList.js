@@ -5,16 +5,18 @@ import UserBox from '~/components/UserBox';
 import Button from '~/components/Button';
 import { useContext, useEffect, useState } from 'react';
 import { OrderContext } from '~/Context/OrderContext';
+import { AppContext } from '~/Context/AppContext';
 
 const cx = classNames.bind(styles);
 
 function OrderList() {
     const { setOrder } = useContext(OrderContext);
+    const {user} = useContext(AppContext)
 
     const [orders, setOrders] = useState();
 
     useEffect(() => {
-        fetch('http://localhost:8000/getOrder')
+        fetch(`http://localhost:8000/getOrder/${user.id}`)
             .then((response) => response.json())
             .then((data) => {
                 setOrders(data);
@@ -23,6 +25,7 @@ function OrderList() {
     }, []);
 
     const handleShowOrderDetails = (e) => {
+        console.log(e);
         setOrder(e);
     };
 

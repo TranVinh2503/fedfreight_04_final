@@ -583,13 +583,15 @@ app.post("/saveProductInfo", (req, res) => {
   );
 });
 
-app.get('/getOrder',(req,res)=>{
+app.get('/getOrder/:id',(req,res)=>{
+  const userId = req.params.id
 
-  db.all('SELECT * FROM Orders', (err, rows) => {
-    if (err) {
+  db.all('SELECT * FROM Orders WHERE customerId = ? Or contributorId = ?',[userId], (err, rows) => {
+    if (err) {  
       console.error(err);
       return res.status(500).send('Error fetching orders from database');
     }
+    console.log(rows);
     return res.status(200).json(rows);
   })
 })
