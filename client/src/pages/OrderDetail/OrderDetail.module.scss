@@ -1,0 +1,151 @@
+.content {
+    width: 100%;
+    min-height: 150vh;
+    padding-top: var(--header-navbar-height);
+    text-align: center;
+}
+
+.content-heading {
+    font-size: 4.8rem;
+    line-height: 5.2rem;
+    font-weight: bolder;
+}
+
+.input {
+    flex: 1;
+    font-size: 1.6rem;
+    color: #343a40;
+    padding: 0 0.8rem;
+}
+
+.user {
+    width: 50%;
+    margin: 2% auto;
+    border-top: 1px solid #D3CFCF;
+    border-bottom: 1px solid #D3CFCF;
+    padding: 1% 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-field {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sender, 
+.receiver { 
+    width: 40%;
+    margin: 2% 5% 1%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.heading {
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin-bottom: 1.6rem;
+}
+
+.detail {
+    margin-bottom: 0.4rem;
+}
+
+strong {
+    margin-left: 0.8rem;
+    color: var(--text-color);
+}
+
+.sub-heading {
+    font-size: 1.8rem;
+    font-style: italic;
+}
+
+.order {
+    width: 90%;
+    margin: 0 5%;
+}
+
+.order-container {
+    margin-top: 2%;
+
+}
+
+.order-info,
+.order-note {
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.order-info table {
+    margin: 0;
+    border-collapse: collapse;
+    width: 100%;
+    height: 100%;
+}
+
+.order-info tr {
+    width: 100%;
+}
+
+.order-info td,
+.order-info th {
+    text-align: left;
+    padding: 4px 8px 4px 0px;
+    color: black;
+}
+
+.order-info th {
+    background-color: #ebf4f4;
+    color: #333;
+    font-size: 1.6rem;
+    font-weight: normal;
+}
+
+.column9 {
+    width: 90%;
+}
+
+.column1 {
+    width: 10%;
+}
+
+.order-info td input {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.4rem;
+    border: 1px solid #D3CFCF;
+    color: #333;
+}
+
+.order-info tr td:nth-child(2) input {
+    text-align: center;
+} 
+
+
+
+.order-note div {
+    text-align: left;
+    padding: 4px 0px;
+}
+
+.order-note > textarea { 
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 4px;
+    min-height: 88px;
+    font-size: 1.4rem;
+    border: 1px solid #D3CFCF;
+    flex-wrap: wrap;
+    color: #303744;
+}
+
+.order-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+

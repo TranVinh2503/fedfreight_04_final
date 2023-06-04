@@ -1,0 +1,66 @@
+.content {
+    width: 100%;
+    min-height: 150vh;
+    padding-top: var(--header-navbar-height);
+}
+
+.content-heading {
+    font-size: 3.2rem;
+    line-height: 3.6rem;
+    font-weight: bolder;
+}
+
+table {
+    margin-top: 2%;
+    width: 100%;
+}
+
+.column4 {
+    width: 40%;
+}
+
+.column2 {
+    text-align: center;
+    width: 20%;
+}
+
+.column3 {
+    width: 30%;
+}
+
+.column1 {
+    width: 10%;
+}
+
+.list-table input {
+    width: 90%;
+    height: 3rem;
+    padding-left: 1.6rem;
+}
+
+.list-table tr {
+    width: 100%;
+    text-align: left;
+    height: 4rem;
+    border-bottom: 1x solid black;
+}
+
+.list-table th {
+    vertical-align: middle;
+}
+
+.list-table td {
+    padding-left: 1.6rem;
+    vertical-align: middle;
+}
+
+.list-table td:last-child {
+    padding-left: 0;
+}
+
+.list-table td span {
+    display: block;
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+}
